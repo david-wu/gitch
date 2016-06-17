@@ -9,7 +9,8 @@ Fuzzy git checkout
 ### Usage
 
 ```
-gitch mispelldbrnchnme
+ch brnchNam
+// => checked out: branchName
 ```
 
 ### Setup
