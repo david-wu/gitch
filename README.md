@@ -10,7 +10,7 @@ Fuzzy git checkout
 ### Usage
 
 ```
-	gitch joaiwew
+	gitch mispelldbrnchnme
 ```
 
 ### Setup
