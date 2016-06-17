@@ -25,7 +25,7 @@ function getBranches(){
 				return branch.indexOf('->') === -1;
 			});
 			branches.pop();
-			return res(branches.concat(branches).concat(branches).concat(branches).concat(branches));
+			return res(branches);
 		});
 	});
 }
