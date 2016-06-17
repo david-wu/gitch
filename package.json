@@ -1,12 +1,11 @@
 {
   "name": "gitch",
   "description": "Fuzzy git checkout",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "David Wu <david.wuu@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "fuzzy": "^0.1.1",
-    "lodash": "^4.13.1"
+    "fuzzy": "^0.1.1"
   },
   "bin": {
     "gitch": "./index.js",

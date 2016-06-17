@@ -3,6 +3,12 @@
 var exec = require('child_process').exec
 var fuzzy = require('fuzzy');
 
+var query = process.argv[2];
+
+if(!query){
+	return console.log('missing query!');
+}
+
 getBranches()
 	.then(getMatch)
 	.then(checkout)
@@ -11,7 +17,7 @@ getBranches()
 
 function getBranches(){
 	return new Promise(function(res, rej){
-		exec('git branch -a', function(err, stdout, stderr){
+		exec('git branch -a', {maxBuffer: 10 * 1024 * 1024}, function(err, stdout, stderr){
 			if(err){return rej(err);}
 
 			var branches = stdout.replace(/ /g, '').replace(/\*/g, '').split('\n');
@@ -19,7 +25,7 @@ function getBranches(){
 				return branch.indexOf('->') === -1;
 			});
 			branches.pop();
-			return res(branches);
+			return res(branches.concat(branches).concat(branches).concat(branches).concat(branches));
 		});
 	});
 }
@@ -37,7 +43,7 @@ function checkout(branch){
 		exec('git checkout '+branch, function(err, stdout, stderr){
 			if(err){return rej(err);}
 
-			res(branch);
+			return res(branch);
 		});
 	})
 }
